@@ -1,4 +1,4 @@
 package com.mairanath.iesp.iespflix.service;
 
-public class CartaoService {
+public class FormaPagamentoService {
 }
