@@ -1,5 +1,6 @@
 package com.mairanath.iesp.iespflix.model;
 
+import com.mairanath.iesp.iespflix.enumeration.ChavePix;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,19 +14,15 @@ public class FormaPagamento {
     @GeneratedValue
     private Integer id;
 
-    @Column(name = "ds_cartao", length =500)
+    @Column(name = "dsd_cartao", length =500)
     private Integer cartao;
     private Integer numCartao;
     private Integer validadeCartao;
     private Integer codigoSeguranca;
     private String nomeTitularCartao;
 
-    @Column(name = "ds_pix", length = 500)
-    private Integer pix;
-    private String cpf;
-    private Integer telefone;
-    private String email;
-    private String chaveAleatoria;
+    @Enumerated
+    private ChavePix pix;
 
     private Integer cartaoPrePago;
     private Integer parceiros;

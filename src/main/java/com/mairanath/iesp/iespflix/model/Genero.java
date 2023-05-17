@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +16,8 @@ public class Genero {
     @Id
     @GeneratedValue
     private Integer id;
-    private String comedia;
-    private String romance;
-    private String terror;
+
+    @NotEmpty
+    private String descricao;
 
 }
