@@ -2,6 +2,7 @@ package com.mairanath.iesp.iespflix.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,12 +17,14 @@ public class Usuario {
     @Id
     @GeneratedValue
     private Integer id;
+    @NotEmpty
     private String nome;
 
     @Column(name = "ds_detalhesUsuario")
     private Integer dataNascimento;
     @Email @NotEmpty
     private String email;
+    @NotEmpty
     private String senha;
     private String confirmarSenha;
     @CPF

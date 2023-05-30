@@ -2,6 +2,7 @@ package com.mairanath.iesp.iespflix.model;
 
 import com.mairanath.iesp.iespflix.enumeration.ChavePix;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,15 +16,10 @@ public class FormaPagamento {
     private Integer id;
 
     @Column(name = "dsd_cartao", length =500)
-    private Integer cartao;
-    private Integer numCartao;
-    private Integer validadeCartao;
-    private Integer codigoSeguranca;
-    private String nomeTitularCartao;
+    private Cartao cartao;
 
-    @Enumerated
+    @Enumerated @NotEmpty
     private ChavePix pix;
-
     private Integer cartaoPrePago;
     private Integer parceiros;
 

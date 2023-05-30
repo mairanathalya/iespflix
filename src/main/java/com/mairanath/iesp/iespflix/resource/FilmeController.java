@@ -5,6 +5,7 @@ package com.mairanath.iesp.iespflix.resource;
 import com.mairanath.iesp.iespflix.model.Filme;
 import com.mairanath.iesp.iespflix.service.FilmeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +19,7 @@ public class FilmeController {
     private FilmeService service;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Filme> salvar(@RequestBody Filme filme){
         filme = service.salvar(filme);
         return ResponseEntity.ok(filme);
@@ -38,6 +40,8 @@ public class FilmeController {
         return ResponseEntity.ok(service.consultarPorId(id));
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Boolean> excluir(@PathVariable("id") Integer id){
         if (service.excluir(id)){
             return ResponseEntity.ok().build();
@@ -45,5 +49,4 @@ public class FilmeController {
             return ResponseEntity.notFound().build();
         }
     }
-
 }

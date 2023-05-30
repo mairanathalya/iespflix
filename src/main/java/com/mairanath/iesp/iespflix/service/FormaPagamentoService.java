@@ -16,7 +16,6 @@ public class FormaPagamentoService {
     private FormaPagamentoRepository repository;
 
     public FormaPagamento salvar(FormaPagamento formaPagamento){
-
         return repository.save(formaPagamento);
     }
     public FormaPagamento alterar( FormaPagamento formaPagamento){

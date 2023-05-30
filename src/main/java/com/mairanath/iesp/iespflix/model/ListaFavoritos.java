@@ -15,6 +15,7 @@ public class ListaFavoritos {
 
     @ManyToOne
     private Usuario usuario;
+    private Filme filme;
 
 
 

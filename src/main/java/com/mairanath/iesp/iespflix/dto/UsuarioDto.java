@@ -9,10 +9,10 @@ import lombok.Data;
 @Data
 public class UsuarioDto {
     private int idade;
+    @NotEmpty
     private String nome;
     @Email @NotEmpty
     private String email;
-
     private String sobrenome;
 
 }
