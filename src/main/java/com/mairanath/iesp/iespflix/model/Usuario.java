@@ -8,11 +8,13 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @Entity
 @Table(name="tb_usuarios")
-public class Usuario {
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue
@@ -26,6 +28,7 @@ public class Usuario {
     private String email;
     @NotEmpty
     private String senha;
+    @NotEmpty
     private String confirmarSenha;
     @CPF
     private String cpf;

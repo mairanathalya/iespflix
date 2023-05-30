@@ -17,9 +17,9 @@ public class Serie implements Serializable {
     private Integer id;
     @NotEmpty
     private String titulo;
-    @NotEmpty
+
     private Integer ano;
-    @NotEmpty
+
     private Long duracao;
 
     @Column(name= "ds_sinopse", length = 500)

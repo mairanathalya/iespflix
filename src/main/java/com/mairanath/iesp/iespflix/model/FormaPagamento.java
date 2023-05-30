@@ -6,13 +6,14 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 
 
 @Getter
 @Setter
 @Entity
 @Table(name = "tb_formapagamento")
-public class FormaPagamento  {
+public class FormaPagamento implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
