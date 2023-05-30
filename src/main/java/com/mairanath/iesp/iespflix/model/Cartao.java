@@ -1,14 +1,16 @@
 package com.mairanath.iesp.iespflix.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+@Embeddable
 public class Cartao {
+
+
     @NotEmpty
     private Integer numCartao;
     @NotEmpty

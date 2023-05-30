@@ -5,11 +5,13 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @Entity
 @Table(name = "tb_serie")
-public class Serie {
+public class Serie implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
